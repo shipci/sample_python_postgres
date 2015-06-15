@@ -3,6 +3,8 @@ language: python
 python:
   - 2.7
   
+env:
+ - secure:LBx19vV8O8haC5hyTKMnwqivmLVaHtqcJK6hzSZQ+0sZnTj9MoFkn5fowM9l+xPRaJ6w+ilSMLoOGx3XM0TOZFqh6Cg9UJIjv2HiKFkwS3qBgBcO47by9zPQ3IUPisb5A9v5SFhbKkp9DefYVgi9DyTAxqPsgOqD2qSQg5YvpsLvmguklGyLrCjCJPBQJzOz4Glqx3POMGBgq8+r4P8crWC7bif+9rgs/SGhNHrCx8pjZFuzpBBW76ly092wbuIWa+H+dxo8se+wo3prmV5bPLpSbjzyPz52LID3qxdXOdiQLpk04xd5V3QVjF5MqODZOEfwztdYhAED0T1NTY5t/A==
 install:
   - pip install -r requirements.txt
 
@@ -19,13 +21,13 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  - echo $Foo and $var
+  - echo $key1 and $key2
 
 notifications:
   email:
      - vidya@shippable.com
      - vidyac.raghav@gmail.com
      
-commit_container: vidyar/sample_python_postgres
+#commit_container: vidyar/sample_python_postgres
 
 
